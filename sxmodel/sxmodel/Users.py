@@ -1,8 +1,6 @@
 # -*- coding: utf-8 -*-
 from datetime import datetime
 from uuid import uuid4
-from werkzeug.security import generate_password_hash, check_password_hash
-
 from app import db
 
 
@@ -21,6 +19,7 @@ class User(db.Model):
 
     def __repr__(self):
         return '<User %r>' % self.login
+
 
 
 class Profile(db.Model):
