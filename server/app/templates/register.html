@@ -1,0 +1,32 @@
+<html>
+    <head>
+        <title> Registro </title>
+    </head>
+    <body>
+        <div>
+            <h1>Registro!</h1>
+            <form action="" method="post" novalidate class="form form-horizontal" role="form">
+                {{ form.hidden_tag() }}
+                <div>
+                    {{ form.login.label }}
+                    {{ form.login(size=64) }}<br>
+                    {% for error in form.login.errors %}
+                    <span style="color: red;">{{ error }}</span>
+                    {% endfor %}
+                </div>
+                <div>
+                    {{ form.password.label }}
+                    {{ form.password }}<br>
+                    {% for error in form.password.errors %}
+                    <span style="color: red;">{{ error }}</span>
+                    {% endfor %}
+                </div>
+                <div>
+                    {{ form.submit() }}
+                </div>
+                <a href= "{{ url_for('main.index') }}"> Principal </a>
+
+            </form>
+        </div>
+    </body>
+</html>
